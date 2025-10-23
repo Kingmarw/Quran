@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>معلومات عنا</title>
+</head>
+<body>
+    <style>
+        .main {
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            padding-left: 12%;
+            border-radius: 15px;
+            padding-top: 5%;
+            padding-right: 12%;
+            padding-bottom: 30px;
+            box-shadow: var(--shadow) 0px 0px 52px;
+            margin-top: 50px;
+            transition: all 0.3s ease;
+        }
+        @media (max-width: 2000px) {
+            .m{
+                display: none;
+            }
+            #mobile-theme{
+                display: none;
+            }
+        }
+        @media (max-width: 720px) {
+            .m{
+                display: inline;
+            }
+            #mobile-theme{
+                display: inline;
+            }
+            #mobile-theme{
+                background: none;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                color:  #fff;
+                transition: transform 0.3s, color 0.3s;
+            }
+            #mobile-theme:hover {
+                transform: rotate(-15deg);
+                color: #f9d71c;
+            }
+        }
+    </style>
+        <section class="section">
+            <div class="main">
+                <button id="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+                <div class="links">
+                    <a href="index.html" class="qu"><i class="fa-solid fa-arrow-left"></i> رجوع</a>
+                    <span>|</span>
+                    <button id="toggle-theme" aria-label="تبديل الوضع">
+                        <i id="theme-icon" class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+                <a href="index.html" class="m qu"><i class="fa-solid fa-arrow-left"></i> رجوع</a>
+                <span class="m">|</span>
+                <button id="mobile-theme" aria-label="تبديل الوضع">
+                    <i id="mobile-icon" class="fa-solid fa-moon"></i>
+                </button>
+                
+                <center style="direction: rtl;">
+                    <img src="devp.webp" alt="" class="devp">
+                    <h1 class="qur">مروان البدري</h1>
+                    <br>
+                    <p>اهلا بيك في موقعي تم تطوير هذا الموقع بواسطتي</p>
+                    <br>
+                    <span class="db"> تقدر تبص بصه 👀 ع موقعي الشخصي من هنا  👈</span>
+                    <a href="https://kingmarw.vercel.app" class="dev">مروان | kingmarw</a>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="index.html" class="qu">الرجوع للصفحه الرئيسيه</a>
+                </center>
+            </div>
+        </section>
+    <script src="j.js"></script>
+</body>
+</html>
