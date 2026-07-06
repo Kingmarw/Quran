@@ -56,8 +56,8 @@ mobileThemeBtn.addEventListener("click", toggleTheme);
 // --- 3. جلب الـ 114 سورة وتفعيل مكتبة Plyr بذكاء ---
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('quran-content');
-    const baseUrl = 'https://server11.mp3quran.net/shatri/';
-    const imageUrl = 'https://i.pinimg.com/564x/f4/3a/1c/f43a1c939f6dc4c921d8e43e2e46b6e2.jpg';
+    const baseUrl = 'https://ia801406.us.archive.org/12/items/002_20221103_202211/';
+    const imageUrl = 'https://i.pinimg.com/564x/8e/9d/be/8e9dbe0ed53280be5398167d1ccc8b7b.jpg';
 
     const surahNames = [
       "الفاتحة", "البقرة", "آل عمران", "النساء", "المائدة", "الأنعام", "الأعراف", "الأنفال", "التوبة", "يونس",
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="dash"></div>
                 <h1>سورة ${surahName}</h1>
                 <br>
-                <p>للقاريء : أبو بكر الشاطري</p>
+                <p>للقاريء : اسلام صبحي</p>
                 <br>
                 <!-- تم إضافة preload="none" لمنع تحميل 114 ملف في الخلفية -->
                 <audio src="${audioSrc}" class="js-player" controls preload="none"></audio>
