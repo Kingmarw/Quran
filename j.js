@@ -1,14 +1,18 @@
-// 🎧 تشغيل / إيقاف الصوت لأي زر تشغيل
+// 🎧 تشغيل / إيقاف الصوت أو الفيديو لأي زر تشغيل
 document.querySelectorAll(".card button:first-of-type").forEach((btn) => {
-  const audio = btn.parentElement.querySelector("audio");
+  // التعديل هنا: نبحث عن audio أو video
+  const media = btn.parentElement.querySelector("audio, video");
 
   btn.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play();
-      btn.textContent = "اضغط لإيقاف التشغيل";
-    } else {
-      audio.pause();
-      btn.textContent = "اضغط للتشغيل";
+    // نتأكد أولاً أن الملف موجود حتى لا يحدث خطأ
+    if (media) {
+      if (media.paused) {
+        media.play();
+        btn.textContent = "اضغط لإيقاف التشغيل";
+      } else {
+        media.pause();
+        btn.textContent = "اضغط للتشغيل";
+      }
     }
   });
 });
