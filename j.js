@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cardsHTML += `
             <div class="card">
-                <img src="${imageUrl}" alt="سورة ${surahName}" width="100%">
+                <img src="${imageUrl}" alt="سورة ${surahName}" loading="lazy" width="100%">
                 <div class="dash"></div>
                 <h1>سورة ${surahName}</h1>
                 <br>
