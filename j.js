@@ -58,7 +58,10 @@ if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark-mode");
   icon.classList.replace("fa-moon", "fa-sun");
 }
-
+// تفعيل مكتبة Plyr على كل الملفات الصوتية والمرئية اللي واخدة كلاس js-player
+document.addEventListener('DOMContentLoaded', () => {
+    const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p));
+});
 // عند الضغط على الزر
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
