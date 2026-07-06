@@ -60,6 +60,7 @@ nav {
   background: var(--nav-bg);
   padding: 30px;
   color: #fff;
+  z-index: 1000;
   border-radius: 0 0 15px 15px;
   transition: background 0.3s ease, color 0.3s ease;
 }
