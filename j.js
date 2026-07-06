@@ -60,7 +60,11 @@ if (localStorage.getItem("theme") === "dark") {
 }
 // تفعيل مكتبة Plyr على كل الملفات الصوتية والمرئية اللي واخدة كلاس js-player
 document.addEventListener('DOMContentLoaded', () => {
-    const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p));
+    const playerOptions = {
+        // تحديد العناصر اللي تظهر في قائمة الإعدادات (شيلنا منها الـ 'speed')
+        settings: ['captions', 'quality', 'loop'] 
+    };
+    const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p, playerOptions));
 });
 // عند الضغط على الزر
 toggleBtn.addEventListener("click", () => {
