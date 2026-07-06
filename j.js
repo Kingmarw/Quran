@@ -53,12 +53,12 @@ mobileThemeBtn.addEventListener("click", toggleTheme);
 
 
 // --- 3. جلب الـ 114 سورة وتفعيل مكتبة Plyr ---
+// --- 3. جلب الـ 114 سورة وتفعيل مكتبة Plyr بذكاء ---
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('quran-content');
     const baseUrl = 'https://server11.mp3quran.net/shatri/';
     const imageUrl = 'https://i.pinimg.com/564x/f4/3a/1c/f43a1c939f6dc4c921d8e43e2e46b6e2.jpg';
 
-    // مصفوفة بأسماء سور القرآن الكريم
     const surahNames = [
       "الفاتحة", "البقرة", "آل عمران", "النساء", "المائدة", "الأنعام", "الأعراف", "الأنفال", "التوبة", "يونس",
       "هود", "يوسف", "الرعد", "إبراهيم", "الحجر", "النحل", "الإسراء", "الكهف", "مريم", "طه",
@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) {
         let cardsHTML = '';
 
-        // اللوب من 1 لـ 114
         for (let i = 1; i <= 114; i++) {
             let numStr = i.toString().padStart(3, '0');
             let audioSrc = `${baseUrl}${numStr}.mp3`;
@@ -91,21 +90,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 <br>
                 <p>للقاريء : أبو بكر الشاطري</p>
                 <br>
-                <audio src="${audioSrc}" class="js-player" controls></audio>
+                <!-- تم إضافة preload="none" لمنع تحميل 114 ملف في الخلفية -->
+                <audio src="${audioSrc}" class="js-player" controls preload="none"></audio>
                 <a href="${audioSrc}" download>
                     <button style="margin-top: 15px; width: 100%;">تنزيل</button>
                 </a>
             </div>
             `;
         }
-
-        // طباعة كل الكروت الصوتية جوه الصفحة
+        
         container.innerHTML = cardsHTML;
     }
 
-    // تفعيل Plyr على الفيديوهات والصوتيات معاً في خطوة واحدة
+    // إعدادات Plyr
     const playerOptions = {
         settings: ['captions', 'quality', 'loop'] 
     };
-    const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p, playerOptions));
+
+    // تحديد كل المشغلات في الصفحة
+    const mediaElements = document.querySelectorAll('.js-player');
+
+    // استخدام IntersectionObserver لتفعيل Plyr فقط عند الظهور في الشاشة
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // إذا كان الكارت يظهر الآن في شاشة المستخدم
+            if (entry.isIntersecting) {
+                // قم بتفعيل مكتبة Plyr على هذا الكارت فقط
+                new Plyr(entry.target, playerOptions);
+                // أوقف مراقبة هذا الكارت حتى لا يتم تفعيله مرة أخرى
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        rootMargin: '100px 0px', // يبدأ التفعيل قبل أن يظهر الكارت بـ 100 بيكسل ليكون جاهزاً
+        threshold: 0.1
+    });
+
+    // تشغيل المراقب على جميع عناصر الصوت والفيديو
+    mediaElements.forEach(el => observer.observe(el));
 });
