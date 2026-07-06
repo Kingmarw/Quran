@@ -35,11 +35,8 @@
         </button>
         </div>
     </header>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br><br>
+    
     <center>
         <section class="section">
             <center>
@@ -50,66 +47,56 @@
                     <br>
                     <span class="db">تم تطويره بواسطة</span>
                     <a href="info.html" class="dev">مروان | kingmarw</a>
-                    <br>
-                    <br>
-                    <br>
+                    <br><br><br>
                     <a href="#qu" class="qu">الأستماع للقرآن</a>
                 </div>
             </center>
         </section>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        
+        <br><br><br><br><br><br>
+        
         <section id="qu">
             <h1 class="qur">القرآن الكريم</h1>
-            <br>
-            <br>
+            <br><br>
+            
             <div class="content">
+                <!-- فيديوهات التلاوات -->
                 <div class="card">
                     <h1>سورة الإسراء</h1>
                     <br>
                     <p>للقاريء : محمد اللحيدان</p>
                     <br>
                     <div class="dash"></div>
-                    <!-- استبدال الصوت بالفيديو -->
-                    <video src="https://kingmarw.github.io/Quran/quran/Download.mp4" class="quran1 js-player " width="100%" controls></video>
+                    <video src="https://kingmarw.github.io/Quran/quran/Download.mp4" class="js-player" width="100%" controls playsinline></video>
                     
-                    <!-- زر التشغيل (إذا كنت تستخدم جافاسكربت لتشغيل الكلاس quran1 فسيعمل مع الفيديو أيضاً) -->
-                    <button class="a">اضغط للتشغيل</button>
-                    
-                    <!-- زر التنزيل مع مسار الفيديو الجديد -->
                     <a href="https://kingmarw.github.io/Quran/quran/Download.mp4" download>
-                        <button>تنزيل</button>
+                        <button style="margin-top: 15px; width: 100%;">تنزيل</button>
                     </a>
                 </div>
+                
                 <div class="card">
                     <h1>سورة النجم</h1>
                     <br>
                     <p>للقاريء : محمد اللحيدان</p>
                     <br>
                     <div class="dash"></div>
-                    <!-- استبدال الصوت بالفيديو -->
-                    <video src="https://kingmarw.github.io/Quran/quran/Download%20(1).mp4" class="quran1 js-player" width="100%" controls></video>
+                    <video src="https://kingmarw.github.io/Quran/quran/Download%20(1).mp4" class="js-player" width="100%" controls playsinline></video>
                     
-                    <!-- زر التشغيل (إذا كنت تستخدم جافاسكربت لتشغيل الكلاس quran1 فسيعمل مع الفيديو أيضاً) -->
-                    <button class="a">اضغط للتشغيل</button>
-                    
-                    <!-- زر التنزيل مع مسار الفيديو الجديد -->
                     <a href="https://kingmarw.github.io/Quran/quran/Download%20(1).mp4" download>
-                        <button>تنزيل</button>
+                        <button style="margin-top: 15px; width: 100%;">تنزيل</button>
                     </a>
                 </div>
 
-                <hr/>
-
-                <div class="content" id="quran-content"></div>
             </div>
+            
+            <br><hr style="width: 80%; border: 1px solid var(--text-color);"><br>
+
+            <!-- هنا الجافاسكريبت هينشئ كروت الـ 114 سورة -->
+            <div class="content" id="quran-content"></div>
             
         </section>
     </center>
+    
     <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
     <script src="j.js"></script>
 </body>
