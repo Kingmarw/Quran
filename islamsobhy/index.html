@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ملف CSS الخاص بـ Plyr -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <title>القرآن الكريم</title>
+</head>
+<body>
 
+    <header>
+        <nav>
+        <h1>القرآن الكريم</h1>
+
+        <button id="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+
+        <div class="links">
+            <button id="toggle-theme" aria-label="تبديل الوضع">
+                <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
+            <a href="#qu"><i class="fa-solid fa-book-quran"></i> القرآن الكريم</a>
+            <span>|</span>
+            <a href="info.html"><i class="fa-solid fa-circle-info"></i> معلومات عنا</a>
+        </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+        <a href="#qu"><i class="fa-solid fa-book-quran"></i> القرآن الكريم</a>
+        <a href="info.html"><i class="fa-solid fa-circle-info"></i> معلومات عنا</a>
+        <button id="mobile-theme" aria-label="تبديل الوضع">
+            <i id="mobile-icon" class="fa-solid fa-moon"></i>
+        </button>
+        </div>
+    </header>
+    <br><br><br><br><br>
+    
+    <center>
+        <section class="section">
+            <center>
+                <div class="main">
+                    <h1 class="qur">القرآن الكريم ❤</h1>
+                    <br>
+                    <p>صفحة القاريء اسلام صبحي</p>
+                    <br>
+                    <br><br><br>
+                    <a href="#qu" class="qu">الأستماع للقرآن</a>
+                </div>
+            </center>
+        </section>
+        
+        <br><br><br><br><br><br>
+        <section id="qu">
+            <!-- هنا الجافاسكريبت هينشئ كروت الـ 114 سورة -->
+            <div class="content" id="quran-content"></div>
+            
+        </section>
+    </center>
+    
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script src="j.js"></script>
+</body>
+</html>
