@@ -83,7 +83,7 @@ nav a:hover {
 
 .card {
   flex: 1 1 300px; 
-  max-width: 800px;
+  max-width: 450px;
   margin: 15px;
   padding: 15px;
   background: var(--card-bg);
